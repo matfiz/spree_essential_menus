@@ -1,0 +1,14 @@
+%div.toolbar
+  %ul.actions
+    %li
+      %p= button_link_to t('.new_menu'), new_object_url, :icon => 'add'
+  %br.clear
+  
+%h1= t('.listing_menus')
+
+%p Tu jest coś - działa jako moje pierwsze exension do spree!
+
+- content_for :sidebar do
+  %div.box
+    %h3 Tutaj jakiś link
+    
