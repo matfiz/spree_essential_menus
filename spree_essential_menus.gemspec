@@ -1,4 +1,5 @@
 #encoding: utf-8
+$:.push File.expand_path("../lib", __FILE__)
 require "spree_essential_menus/version"
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
