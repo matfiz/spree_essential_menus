@@ -1,10 +1,9 @@
-# -*- encoding: utf-8 -*-
-$:.push File.expand_path("../lib", __FILE__)
+#encoding: utf-8
 require "spree_essential_menus/version"
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
-  s.name        = 'spree-essential-menus'
-  s.version     = '1.1.0'
+  s.name        = 'spree_essential_menus'
+  s.version     = SpreeEssentialMenus::VERSION
   s.summary     = 'Add menu customization for Spree'
   s.description = "Add menu customization for Spree. It's designed to be used with the spree_essentials base."
   s.required_ruby_version = '>= 1.8.7'
@@ -18,7 +17,7 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_dependency 'spree_core', '~> 1.1.0'
+  #s.add_dependency 'spree_core', '~> 1.1.0'
   # Spree Essentials
   s.add_runtime_dependency('spree_essentials', '~> 0.5.0.rc1')
 
