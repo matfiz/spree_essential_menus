@@ -3,7 +3,7 @@ $:.push File.expand_path("../lib", __FILE__)
 require "spree_essential_menus/version"
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
-  s.name        = 'spree_essential_menus'
+  s.name        = 'spree-essential-menus'
   s.version     = '1.1.0'
   s.summary     = 'Add menu customization for Spree'
   s.description = "Add menu customization for Spree. It's designed to be used with the spree_essentials base."
