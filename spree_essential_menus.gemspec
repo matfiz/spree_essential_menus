@@ -21,6 +21,8 @@ Gem::Specification.new do |s|
   #s.add_dependency 'spree_core', '~> 1.1.0'
   # Spree Essentials
   s.add_runtime_dependency('spree_essentials', '~> 0.5.0.rc1')
+  
+  s.add_runtime_dependency('haml')
 
   s.add_development_dependency 'capybara', '1.0.1'
   s.add_development_dependency 'factory_girl', '~> 2.6.4'
