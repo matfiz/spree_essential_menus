@@ -1,0 +1,19 @@
+pl:
+  menus: Menu
+  menu_bars: Paski menu
+    
+  spree:
+    admin:
+      menus:
+        index:
+          listing_menus: Menu na stronie
+        new:
+          new_menu: Nowa pozycja w menu 
+        new_menu: "Nowy element menu"
+        list_of_menus: "Lista elementów menu"
+      menu_bars:
+        list_of_menu_bars: "Lista rodzajów menu"
+        new_menu_bar: "Nowy pasek menu"
+        name: "Nazwa"
+        description: "Krótki opis"
+        class: "Klasa CSS"

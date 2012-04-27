@@ -1,0 +1,11 @@
+- if @menu_bar.try(:errors).present?
+  = render 'spree/shared/error_messages', :target => @menu_bar
+  
+= form_for([:admin, @menu_bar], :html => { :multipart => true }) do |f|
+  = render "form", :form => f
+  %p.form-buttons
+    = button t('update') 
+    = t('or') 
+    = link_to t('cancel'), collection_url
+    
+= render :partial => 'spree/admin/shared/spree_menus_sidebar'

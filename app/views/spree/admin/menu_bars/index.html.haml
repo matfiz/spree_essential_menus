@@ -1,0 +1,26 @@
+%div.toolbar
+  %ul.actions
+    %li
+      %p= button_link_to t('spree.admin.menu_bars.new_menu_bar'), new_object_url, :icon => 'add'
+  %br.clear
+  
+%h1= t('spree.admin.menu_bars.list_of_menu_bars')
+
+%table.index
+  %thead
+    %tr
+      %th= t('spree.admin.menu_bars.name')
+      %th= t('spree.admin.menu_bars.css_class')
+      %th= t('action')
+  %tbody
+    - @menu_bars.each do |bar|
+      %tr
+        %td= bar.name
+        %td= bar.css_class
+        %td
+          = link_to_edit bar
+          = link_to_delete bar
+  
+
+= render :partial => 'spree/admin/shared/spree_menus_sidebar'
+    
