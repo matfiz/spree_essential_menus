@@ -1,6 +1,8 @@
 class Spree::Menu < ActiveRecord::Base
   
-  attr_accessible :spree_page_id, :sequence,:parent_id, :link_text, :url, :visible, :menu_type
+  belongs_to :menubar
+  
+  attr_accessible :spree_page_id, :sequence,:parent_id, :link_text, :url, :visible, :spree_menubar_id
   alias_attribute :position, :sequence
   
   acts_as_tree :order => "sequence"
