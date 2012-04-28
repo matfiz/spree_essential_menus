@@ -7,13 +7,13 @@ require "spree_essential_menus/engine"
 module SpreeEssentialMenus
 
   def self.tab
-    { :label => "Menus", :route => :admin_menus }
+    { :label => "Menu bars", :route => :admin_menu_bars }
   end
   
   def self.sub_tab
-    [ :menus, { :match_path => '/menus' }]
+    [ :menus, { :match_path => '/menu_bars' }]
   end
   
 end
 
-SpreeEssentials.register :menus, SpreeEssentialMenus
+SpreeEssentials.register :menu_bars, SpreeEssentialMenus

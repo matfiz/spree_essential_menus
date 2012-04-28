@@ -1,20 +1,46 @@
-= form.field_container :name do
-  = form.label :name, t('spree.admin.menu_bars.name')
+= form.field_container :link_text do
+  = form.label :link_text, t('spree.admin.menus.link_text')
   %span.required
   %br
-  = form.text_field :name, :class => "name"
-  = error_message_on :menu_bar, :name
+  = form.text_field :link_text, :class => "link_text"
+  = error_message_on :menu, :link_text
 
-= form.field_container :description do
-  = form.label :description, t('spree.admin.menu_bars.description')
+= form.field_container :url do
+  = form.label :url, t('spree.admin.menus.url')
   %span.required
   %br
-  = form.text_field :description, :class => "description"
-  = error_message_on :menu_bar, :description
+  = form.text_field :url, :class => "url"
+  %br
+  %em= t("spree.admin.menus.explain_url")
+  = error_message_on :menu, :url
   
-= form.field_container :css_class do
-  = form.label :css_class, t('spree.admin.menu_bars.css_class')
-  %span.required
-  %br
-  = form.text_field :css_class, :class => "css_class"
-  = error_message_on :menu_bar, :css_class
+= form.field_container :visible do
+  = form.check_box :visible, :class => "text"
+  = form.label :visible, t('spree.admin.menus.visible')
+  %em= t("spree.admin.menus.explain_visible")
+  = error_message_on :menu, :visible
+  
+- if Spree::Menu.all.count > 0  
+  = form.field_container :parent_id do
+    = form.label :parent_id, t('spree.admin.menus.parent_id')
+    %br
+    = form.text_field :parent_id, :class => "parent_id"
+    = form.select("menu","parent_id",Spree::Menu.all.collect{|m| [m.link_text, m.id]}.flatten, {:prompt => t("spree.admin.menus.select_parent")})
+    %em= t("spree.admin.menus.explain_parent_id")
+    = error_message_on :menu, :parent_id
+    
+- if Spree::MenuBar.all.count > 0  
+  = form.field_container :spree_menu_bar_id do
+    = form.label :spree_menu_bar_id, t('spree.admin.menus.spree_menu_bar_id')
+    %br
+    = collection_select(:menu,:spree_menu_bar_id,Spree::MenuBar.all, :id, :name, :prompt => t("spree.admin.menus.select_spree_menu_bar_id"))
+    %em= t("spree.admin.menus.explain_spree_menu_bar_id")
+    = error_message_on :menu, :spree_menu_bar_id
+    
+- if Spree::Page.all.count > 0  
+  = form.field_container :spree_page_id do
+    = form.label :spree_page_id, t('spree.admin.menus.spree_page_id')
+    %br
+    = collection_select(:menu,:spree_page_id,Spree::Page.visible, :id, :name, :prompt => t("spree.admin.menus.select_spree_page_id"))
+    %em= t("spree.admin.menus.explain_spree_page_id")
+    = error_message_on :menu, :spree_page_id

@@ -14,6 +14,6 @@ class Spree::Menu < ActiveRecord::Base
   validates_presence_of :url
   validates_presence_of :menu_type
   
-  default_scope order(:position)
+  default_scope order(:sequence)
   scope :visible, where(:visible => true)
 end
