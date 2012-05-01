@@ -5,8 +5,32 @@
   %br.clear
   
 %h1= t('.listing_menus')
+%h2= @menu_bar.description
 
-%p Tu jest coś - działa jako moje pierwsze exension do spree!
+%table.index.sortable{:data => {:"sortable-link" => update_positions_admin_menu_bar_menus_url(@menu_bar)}}
+  %thead
+    %tr
+      %th= sort_link @search, :link_text, t('spree.admin.menus.link_text')
+      %th= sort_link @search, :url, t('spree.admin.menus.url')
+      %th= t('spree.admin.menus.page_id')
+      %th= t('action')
+  %tbody
+    - @collection.each do |menu|
+      %tr{:id => "#{spree_dom_id menu}"}
+        %td
+          %span.handle &nbsp;
+          = link_to menu.link_text
+        %td
+          = link_to menu.url
+        %td
+          - if menu.page.present?
+            = link_to menu.page.title
+          - else
+            = t('.static_path')
+        %td
+          = link_to_edit menu
+          &nbsp;
+          = link_to_delete menu
 
 = render :partial => 'spree/admin/shared/spree_menus_sidebar'
     

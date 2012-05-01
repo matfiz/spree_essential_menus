@@ -1,3 +1,8 @@
+- if @menu.sequence.blank?
+  = form.hidden_field :sequence, :class => "sequence", :value => @sequence
+
+
+
 = form.field_container :link_text do
   = form.label :link_text, t('spree.admin.menus.link_text')
   %span.required
@@ -19,28 +24,21 @@
   = form.label :visible, t('spree.admin.menus.visible')
   %em= t("spree.admin.menus.explain_visible")
   = error_message_on :menu, :visible
-  
-- if Spree::Menu.all.count > 0  
+%h3 Opcjonalnie
+- if Spree::Menu.all.count > 0 and false#turn off for futher improvement
   = form.field_container :parent_id do
     = form.label :parent_id, t('spree.admin.menus.parent_id')
     %br
-    = form.text_field :parent_id, :class => "parent_id"
-    = form.select("menu","parent_id",Spree::Menu.all.collect{|m| [m.link_text, m.id]}.flatten, {:prompt => t("spree.admin.menus.select_parent")})
+    = collection_select(:menu,:parent_id,Spree::Menu.where(:menu_bar_id => @menu_bar.id).all, :id, :link_text, :prompt => t("spree.admin.menus.select_parent"))
     %em= t("spree.admin.menus.explain_parent_id")
     = error_message_on :menu, :parent_id
     
-- if Spree::MenuBar.all.count > 0  
-  = form.field_container :spree_menu_bar_id do
-    = form.label :spree_menu_bar_id, t('spree.admin.menus.spree_menu_bar_id')
-    %br
-    = collection_select(:menu,:spree_menu_bar_id,Spree::MenuBar.all, :id, :name, :prompt => t("spree.admin.menus.select_spree_menu_bar_id"))
-    %em= t("spree.admin.menus.explain_spree_menu_bar_id")
-    = error_message_on :menu, :spree_menu_bar_id
+
     
 - if Spree::Page.all.count > 0  
   = form.field_container :spree_page_id do
-    = form.label :spree_page_id, t('spree.admin.menus.spree_page_id')
+    = form.label :spree_page_id, t('spree.admin.menus.page_id')
     %br
-    = collection_select(:menu,:spree_page_id,Spree::Page.visible, :id, :name, :prompt => t("spree.admin.menus.select_spree_page_id"))
-    %em= t("spree.admin.menus.explain_spree_page_id")
-    = error_message_on :menu, :spree_page_id
+    = collection_select(:menu,:page_id,Spree::Page.visible, :id, :name, :prompt => t("spree.admin.menus.select_page_id"))
+    %em= t("spree.admin.menus.explain_page_id")
+    = error_message_on :menu, :page_id

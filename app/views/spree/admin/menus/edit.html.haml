@@ -1,12 +1,11 @@
 - if @menu.try(:errors).present?
   = render 'spree/shared/error_messages', :target => @menu
 
-%h1= t('spree.admin.menus.new_menu')
+%h1= t('spree.admin.menus.edit_menu')
 
 = form_for([:admin, @menu_bar, @menu], :html => { :multipart => true }) do |f|
   = render "form", :form => f
   %p.form-buttons
-    = button t('create') 
+    = button t('update') 
     = t('or') 
     = link_to t('cancel'), collection_url
-    

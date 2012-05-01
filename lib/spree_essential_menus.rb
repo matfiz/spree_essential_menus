@@ -11,7 +11,7 @@ module SpreeEssentialMenus
   end
   
   def self.sub_tab
-    [ :menus, { :match_path => '/menu_bars' }]
+    [ :menu_bars, { :match_path => '/menu_bars' }]
   end
   
 end

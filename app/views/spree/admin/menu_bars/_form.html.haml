@@ -1,0 +1,20 @@
+= form.field_container :name do
+  = form.label :name, t('spree.admin.menu_bars.name')
+  %span.required
+  %br
+  = form.text_field :name, :class => "name"
+  = error_message_on :menu_bar, :name
+  
+= form.field_container :description do
+  = form.label :description, t('spree.admin.menu_bars.description')
+  %span.required
+  %br
+  = form.text_field :description, :class => "description"
+  = error_message_on :menu_bar, :description
+  
+= form.field_container :css_class do
+  = form.label :css_class, t('spree.admin.menu_bars.css_class')
+  %span.required
+  %br
+  = form.text_field :css_class, :class => "css_class"
+  = error_message_on :menu_bar, :css_class
