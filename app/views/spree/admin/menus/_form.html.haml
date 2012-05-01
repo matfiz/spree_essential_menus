@@ -39,6 +39,6 @@
   = form.field_container :spree_page_id do
     = form.label :spree_page_id, t('spree.admin.menus.page_id')
     %br
-    = collection_select(:menu,:page_id,Spree::Page.visible, :id, :name, :prompt => t("spree.admin.menus.select_page_id"))
+    = collection_select(:menu,:page_id,Spree::Page.visible, :id, :name, :prompt => t("spree.admin.menus.select_page_id"), :include_blank => true)
     %em= t("spree.admin.menus.explain_page_id")
     = error_message_on :menu, :page_id
