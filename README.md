@@ -8,7 +8,9 @@ Installation
 ------------
 
 Add the following line to your gemfile:
+
     gem 'spree_essential_menus', :git => 'git://github.com/matfiz/spree_essential_menus.git'
+    
 Then run *bundle*.
 
 Copy the migrations to your app and run *rake db:migrate*. You are ready to play!
@@ -28,6 +30,7 @@ Example
 =======
 
 When you create *Menu bars*, you can easily embedd them in your layout by the partial, like below (written in *HAML*):
+
     %header
       %nav
         - @menu_bar = Spree::MenuBar.find_by_name("menu_dolne_main")
