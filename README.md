@@ -33,9 +33,8 @@ When you create *Menu bars*, you can easily embedd them in your layout by the pa
 
     %header
       %nav
-        - @menu_bar = Spree::MenuBar.find_by_name("menu_dolne_main")
-          - if @menu_bar.present?
-            = render "spree/shared/render_menu", :menu_bar => @menu_bar
+        - @menu_bar = Spree::MenuBar.find_by_name("main_menu")
+        = render :partial => "spree/shared/render_menu", :locals => {:menu_bar => @menu_bar}
 
 
 Testing
