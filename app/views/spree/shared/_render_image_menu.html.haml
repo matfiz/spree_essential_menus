@@ -1,0 +1,18 @@
+- if menu_bar.present?
+  %ul{:class => "image_menu #{menu_bar.css_class}"}
+    - menu_bar.menus.visible.where(:parent_id => nil).each do |parent|
+      %li{:id => "element#{parent.id}", :class => "first-level"}
+        = image_tag(parent.menu_image.url(:logo_color), :class => "color")
+        = image_tag(parent.menu_image.url(:logo_grey), :class => "grey")
+        = link_to parent.link_text, parent.url
+        - if parent.children.count > 0
+          %ul
+            - parent.children.each do |child|
+              %li.second-level{:"data-image-color" => child.menu_image.url(:original),:"data-image-grey" => child.menu_image.url(:greyscale)}
+                = image_tag(child.menu_image.url(:original), :class => "color")
+                = image_tag(child.menu_image.url(:greyscale), :class => "grey")
+                = link_to child.link_text, child.url
+            %div 
+              Zamknij 
+              %span X
+    %ul.subimage_menu

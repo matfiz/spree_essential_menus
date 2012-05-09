@@ -1,0 +1,50 @@
+$szary: #A7A7A7
+
+ul.image_menu
+  display: block
+  text-align: center
+  height: 120px
+  width: 960px
+  &:hover
+    cursor: pointer
+  li
+    display: inline-block
+    position: relative
+    padding-left: 10px
+    height: auto
+    &.first-level
+      a
+        position: relative
+        top: 0px
+    img
+      display: block
+      &.grey
+        position: absolute
+        left: 10px
+        top: 0
+      &.color
+  ul
+    display: none
+    padding: 0
+    position: relative
+    margin: 0 auto
+    border: 1px solid $szary
+    height: auto
+    width: 800px
+    z-index: 100
+    background: image-url('store/image_menu_bg.png') repeat-x
+    li
+      padding: 0
+      img.grey
+        left: 0px
+    div
+      width: 60px
+      border-radius: 5px
+      position: absoulte
+      bottom: 0
+      right: 0
+      background: $szary
+      color: white
+    &.subimage_menu
+      min-height: 110px
+    
