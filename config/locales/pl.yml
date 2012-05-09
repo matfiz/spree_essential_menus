@@ -35,5 +35,3 @@ pl:
         name: "Nazwa"
         description: "Krótki opis"
         css_class: "Klasa CSS"
-      menu_images:
-        new_menu_image: "Nowy obrazek menu"
