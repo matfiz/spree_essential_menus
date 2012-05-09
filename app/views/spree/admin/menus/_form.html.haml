@@ -26,11 +26,11 @@
   = error_message_on :menu, :visible
 
 %h3 Opcjonalnie
-- if Spree::Menu.all.count > 0 and false#turn off for futher improvement
+- if Spree::Menu.all.count > 0 #and false#turn off for futher improvement
   = form.field_container :parent_id do
     = form.label :parent_id, t('spree.admin.menus.parent_id')
     %br
-    = collection_select(:menu,:parent_id,Spree::Menu.where(:menu_bar_id => @menu_bar.id).all, :id, :link_text, :prompt => t("spree.admin.menus.select_parent"))
+    = collection_select(:menu,:parent_id,Spree::Menu.where(:menu_bar_id => @menu_bar.id, :parent_id => nil).all, :id, :link_text, :prompt => t("spree.admin.menus.select_parent"))
     %em= t("spree.admin.menus.explain_parent_id")
     = error_message_on :menu, :parent_id
 = form.field_container :menu_image do

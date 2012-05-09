@@ -25,8 +25,8 @@ class Spree::Menu < ActiveRecord::Base
    has_attached_file :menu_image,
     :styles => Proc.new{ |clip| clip.instance.attachment_sizes },
     :default_style => :medium,
-    :url => '/spree/posts/:id/:style/:basename.:extension',
-    :path => ':rails_root/public/spree/posts/:id/:style/:basename.:extension'
+    :url => '/spree/menus/:id/:style/:basename.:extension',
+    :path => ':rails_root/public/spree/menus/:id/:style/:basename.:extension'
     
   def image_content?
     menu_image_content_type.to_s.match(/\/(jpeg|png|gif|tiff|x-photoshop)/)
@@ -34,7 +34,8 @@ class Spree::Menu < ActiveRecord::Base
   
   def attachment_sizes
     hash = {}
-    hash.merge!(:mini => '48x48>',:color => '320x100#', :greyscale => {:geometry => '320x100#', :processors => [:grayscale]}) if image_content?
+    hash.merge!(:mini => '48x48>', :greyscale => {:processors => [:grayscale]}) if image_content?
+    hash.merge!(:logo_color => '123x81>', :logo_grey => {:geometry => '123x81>', :processors => [:thumbnail,:grayscale]}) if parent_id.nil?
     hash
   end
   

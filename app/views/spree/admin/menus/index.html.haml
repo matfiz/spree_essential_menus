@@ -13,6 +13,7 @@
       %th= sort_link @search, :link_text, t('spree.admin.menus.link_text')
       %th= sort_link @search, :url, t('spree.admin.menus.url')
       %th= t('spree.admin.menus.page_id')
+      %th= t('spree.admin.menus.parent_id')
       %th= t('spree.admin.menus.menu_image')
       %th= t('action')
   %tbody
@@ -28,6 +29,11 @@
             = link_to menu.page.title
           - else
             = t('.static_path')
+        %td
+          - if menu.parent_id.nil?
+            -
+          - else
+            = menu.parent.link_text
         %td
           - if menu.menu_image.present?
             = link_to image_tag(menu.menu_image.url(:mini)), menu.menu_image.url(:color), :target => "_blank"
