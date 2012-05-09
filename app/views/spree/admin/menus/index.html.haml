@@ -13,6 +13,7 @@
       %th= sort_link @search, :link_text, t('spree.admin.menus.link_text')
       %th= sort_link @search, :url, t('spree.admin.menus.url')
       %th= t('spree.admin.menus.page_id')
+      %th= t('spree.admin.menus.menu_image')
       %th= t('action')
   %tbody
     - @collection.each do |menu|
@@ -28,9 +29,14 @@
           - else
             = t('.static_path')
         %td
+          - if menu.menu_image.present?
+            = link_to image_tag(menu.menu_image.url(:mini)), menu.menu_image.url(:color), :target => "_blank"
+          - else
+            brak
+        %td
           = link_to_edit menu
           &nbsp;
           = link_to_delete menu
 
-= render :partial => 'spree/admin/shared/spree_menus_sidebar'
+= render :partial => 'spree/admin/shared/spree_menus_sidebar', :locals => {:current => "menu_elements"}
     

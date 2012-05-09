@@ -12,10 +12,11 @@ Gem::Specification.new do |s|
   s.author    = 'Grzegorz Brzezinka'
   s.email     = 'grzegorz@brzezinka.eu'
   s.homepage  = 'http://www.brzezinka.eu'
+  s.has_rdoc = false
 
   s.files       = `git ls-files`.split("\n")
   s.test_files  = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.require_path = 'lib'
+  s.require_paths = ['lib','lib/paperclip_processors']
   s.requirements << 'none'
 
   #s.add_dependency 'spree_core', '~> 1.1.0'

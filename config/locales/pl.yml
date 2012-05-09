@@ -1,6 +1,7 @@
 pl:
   menus: Menu
   menu_bars: Paski menu
+  menu_images: Obrazki menu
     
   spree:
     admin:
@@ -26,9 +27,13 @@ pl:
         select_page_id: "Wybierz stronę statyczną"
         explain_page_id: "Wybierz stronę statyczną, do której odnosi się pozycja"
         sequence: "Kolejność"
+        menu_image: "Obrazek"
       menu_bars:
         list_of_menu_bars: "Lista pasków menu"
+        editing_menu_bar: "Edycja paska"
         new_menu_bar: "Nowy pasek menu"
         name: "Nazwa"
         description: "Krótki opis"
         css_class: "Klasa CSS"
+      menu_images:
+        new_menu_image: "Nowy obrazek menu"
