@@ -1,0 +1,94 @@
+@import compass
+#slider
+  border-top: 1px solid #fff
+  +box-shadow(0 0 6px 1px rgba(0,0,0,0.3))
+  position: relative
+  z-index: 10
+  padding: 5px 0
+  +background(mix(#BCBCBC, #fff) linear-gradient(#BCBCBC, #fff))
+  @extend .pie
+  .inner
+    width: 750px
+    margin: 0 auto
+
+.touchcarousel
+  position: relative
+  overflow: hidden
+  .touchcarousel-container
+    position: relative
+    margin: 0
+    padding: 0
+    list-style: none
+    left: 0
+  .touchcarousel-wrapper
+    position: relative
+    overflow: hidden
+    width: 100%
+    height: 100%
+  .touchcarousel-item
+    margin: 0 23px 0 0
+    padding: 0
+    float: left
+    border: 1px solid #818181
+    +border-radius(2px)
+    position: relative
+    img
+      display: block
+      &.grey
+        position: absolute
+        left: 0px
+        top: 0
+      &.color
+    &.last
+      margin-right: 0 !important
+  .arrow-holder
+    height: 100%
+    width: 45px
+    position: absolute
+    top: 0
+    display: block
+    cursor: pointer
+    z-index: 25
+    outline: none
+    &.left
+      left: 0
+    &.right
+      right: 0
+  .arrow-icon
+    top: 50%
+    margin-top: - (image_height('store/slider-prev.png') / 2)
+    position: absolute
+    cursor: pointer
+    &.left
+      +replace-text-with-dimensions('store/slider-prev.png')
+      left: -50px
+    &.right
+      +replace-text-with-dimensions('store/slider-next.png')
+      right: -50px
+  .arrow-holder
+    &:hover .arrow-icon
+    &.disabled
+      cursor: default
+      .arrow-icon
+        cursor: default
+  .tc-paging-container
+    width: 100%
+    overflow: hidden
+    position: absolute
+    margin-top: -20px
+    z-index: 25
+  .tc-paging-centerer
+    float: left
+    position: relative
+    left: 50%
+  .tc-paging-centerer-inside
+    float: left
+    position: relative
+    left: -50%
+  .tc-paging-item
+    float: left
+    cursor: pointer
+    position: relative
+    display: block
+    text-indent: -9999px
+

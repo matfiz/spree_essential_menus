@@ -1,0 +1,10 @@
+- if menu_bar.present?
+  %section#slider
+    .inner.touchcarousel
+      %ul.touchcarousel-container
+        - menu_bar.menus.visible.each do |menu|
+          %li{:class => "touchcarousel-item", :"data-href" => "#{menu.url}"}
+            =# link_to image_tag(menu.menu_image.url(:original)), menu.url
+            %a{:href => "menu.url"}
+              = image_tag(menu.menu_image.url(:original), :class => "color")
+              = image_tag(menu.menu_image.url(:greyscale), :class => "grey")
