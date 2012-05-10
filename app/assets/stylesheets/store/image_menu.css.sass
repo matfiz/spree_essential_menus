@@ -1,4 +1,6 @@
 $szary: #A7A7A7
+$wysokosc_obrazka_submenu: 109px
+$szerokosc_obrazka_submenu: 218px
 
 ul.image_menu
   display: block
@@ -12,10 +14,6 @@ ul.image_menu
     position: relative
     padding-left: 10px
     height: auto
-    &.first-level
-      a
-        position: relative
-        top: 0px
     img
       display: block
       &.grey
@@ -37,7 +35,7 @@ ul.image_menu
       padding: 0
       img.grey
         left: 0px
-    div
+    div.close
       width: 60px
       border-radius: 5px
       position: absoulte
@@ -45,6 +43,22 @@ ul.image_menu
       right: 0
       background: $szary
       color: white
+    div.label
+      $wysokosc_etykiety: 20px
+      position: absolute
+      top: $wysokosc_obrazka_submenu - $wysokosc_etykiety
+      width: $szerokosc_obrazka_submenu
+      height: $wysokosc_etykiety
+      background-color: #F9F9F9
+      text-align: left
+      color: black
+      &.over
+        background-color: black
+        color: #F9F9F9
     &.subimage_menu
       min-height: 110px
+div.subimage_menu_container
+  display: block
+div.clearfix
+  clear: both
     
