@@ -5,23 +5,24 @@ $szerokosc_obrazka_submenu: 218px
 ul.image_menu
   display: block
   text-align: center
-  height: 120px
-  width: 960px
+  height: 30px
+  width: 920px
   &:hover
     cursor: pointer
   li
     display: inline-block
     position: relative
-    padding-left: 10px
+    padding-left: 0px
     height: auto
+    margin-left: 10px
     img
       display: block
-      margin: auto
       &.grey
         position: absolute
-        left: 10px
+        left: 0px
         top: 0
       &.color
+        opacity: 0
   ul
     display: none
     padding: 0
@@ -29,13 +30,17 @@ ul.image_menu
     margin: 0 auto
     border: 1px solid $szary
     height: auto
-    width: 800px
+    width: 881px
+    text-align: left
     z-index: 100
     background: image-url('store/image_menu_bg.png') repeat-x
     li
+      margin: 0px
       padding: 0
       img.grey
         left: 0px
+      img.color
+        opacity: 1
     div.close
       width: 60px
       border-radius: 5px
@@ -57,9 +62,10 @@ ul.image_menu
         background-color: black
         color: #F9F9F9
     &.subimage_menu
-      min-height: 110px
+      min-height: 1px
 div.subimage_menu_container
   display: block
+  margin-top: 10px 
 div.clearfix
   clear: both
     

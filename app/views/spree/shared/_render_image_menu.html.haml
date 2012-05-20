@@ -1,22 +1,19 @@
 - if menu_bar.present?
-  %ul{:class => "image_menu #{menu_bar.css_class}"}
-    - menu_bar.menus.visible.where(:parent_id => nil).each do |parent|
-      %li{:id => "element#{parent.id}", :class => "first-level"}
-        %a{:href => "#{parent.url}"}
-          = image_tag(parent.menu_image.url(:logo_color), :class => "color")
-          = image_tag(parent.menu_image.url(:logo_grey), :class => "grey")
-        - if parent.children.count > 0
-          %ul
-            - parent.children.each do |child|
-              %li.second-level{:"data-image-color" => child.menu_image.url(:original),:"data-image-grey" => child.menu_image.url(:greyscale)}
-                %a{:href => "#{child.url}"}
-                  = image_tag(child.menu_image.url(:original), :class => "color")
-                  = image_tag(child.menu_image.url(:greyscale), :class => "grey")
-                  %div.label= child.link_text.upcase
-            %div.close
-              Zamknij 
-              %span X
-            %div.clearfix
-    %div.subimage_menu_container
-      %ul.subimage_menu
-      
+  %div.menu_container
+    %ul{:class => "image_menu #{menu_bar.css_class}"}
+      - menu_bar.menus.visible.where(:parent_id => nil).each do |parent|
+        %li{:id => "element#{parent.id}", :class => "first-level"}
+          %a{:href => "#{parent.url}"}
+            = image_tag(parent.menu_image.url(:logo_color), :class => "color")
+            = image_tag(parent.menu_image.url(:logo_grey), :class => "grey")
+          - if parent.children.count > 0
+            %ul
+              - parent.children.each do |child|
+                %li.second-level{:"data-image-color" => child.menu_image.url(:original),:"data-image-grey" => child.menu_image.url(:greyscale)}
+                  %a{:href => "#{child.url}"}
+                    = image_tag(child.menu_image.url(:original), :class => "color")
+                    = image_tag(child.menu_image.url(:greyscale), :class => "grey")
+                    %div.label= child.link_text.upcase
+              
+      %div.subimage_menu_container
+        %ul.subimage_menu
