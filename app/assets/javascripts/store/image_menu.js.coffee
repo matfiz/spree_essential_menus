@@ -24,7 +24,7 @@ $ ->
     #$(@).find("img.color").first().stop().animate({"opacity": "0"}, "slow")
   
   $(".menu_container").mouseleave (e) -> 
-    $("ul.subimage_menu").stop(true, true).delay(1000).fadeOut(2000) 
+    $("ul.subimage_menu").stop(true, true).delay(100).fadeOut(2000) 
     parent_id = $("ul.subimage_menu").data("parent")
     $("#"+parent_id).find("img.grey").first().stop().animate({"opacity": "1"}, "fast")
     $("#"+parent_id).find("img.color").first().stop().animate({"opacity": "0"}, "slow")
