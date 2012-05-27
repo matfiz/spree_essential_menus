@@ -42,7 +42,7 @@ class Spree::Admin::MenusController < Spree::Admin::ResourceController
       params[:q] ||= {}
       params[:q][:sort] ||= "menu_bar.asc"
       @search = parent.menus.search(params[:q])
-      @collection = @search.result.page(params[:menu_bar]).per(Spree::Config[:orders_per_page])
+      @collection = @search.result.page(params[:menu_bar])
     end
   
 
