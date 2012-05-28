@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
   # Spree Essentials
   s.add_runtime_dependency('spree_essentials', '~> 0.5.0.rc1')
   s.add_runtime_dependency('coffee-rails')
-  s.add_runtime_dependency("acts_as_tree", :git => 'git://github.com/amerine/acts_as_tree.git', :ref => "ba0a786721")
+  s.add_runtime_dependency("acts_as_tree", '~> 0.2.0')
   
   s.add_runtime_dependency('haml')
 
