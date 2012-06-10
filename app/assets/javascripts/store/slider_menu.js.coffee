@@ -2,12 +2,13 @@ $ ->
   window.onload = ->
     $(".touchcarousel").touchCarousel
       scrollbar: false
-      itemsPerMove: 4
+      itemsPerMove: 1
       snapToItems: true
-      loopItems: true
+      loopItems: false
       dragUsingMouse: false
-    if $(".touchcarousel").find("ul").find("li").length <= 4
-      $(".touchcarousel").find("a.arrow-holder").css('display','none')  
+    if $(".touchcarousel").find("ul").width() < $(".touchcarousel").width()
+      $(".touchcarousel").find("a.arrow-holder").css('display','none')
+      $(".touchcarousel").find("ul").css("margin","auto")  
   $(".touchcarousel-item").mouseover ->
     $(@).find("img.grey").first().stop().animate({"opacity": "0"}, "fast")
   $(".touchcarousel-item").mouseout ->
