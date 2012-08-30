@@ -12,6 +12,7 @@ Add the following line to your gemfile:
     gem 'spree_essential_menus', :git => 'git://github.com/matfiz/spree_essential_menus.git'
     
 Run:
+
     bundle
     rails g spree_essential_menus:install
 
