@@ -19,9 +19,9 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib','lib/paperclip_processors']
   s.requirements << 'none'
 
-  #s.add_dependency 'spree_core', '~> 1.1.0'
   # Spree Essentials
-  s.add_runtime_dependency('spree_essentials', '~> 0.5.0.rc1')
+  s.add_runtime_dependency('acts_as_tree', '~> 1.1.0')
+  s.add_runtime_dependency('spree_essentials', '~> 0.5.0')
   s.add_runtime_dependency('coffee-rails')
   s.add_runtime_dependency("acts_as_tree", '~> 0.2.0')
   
