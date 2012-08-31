@@ -1,3 +1,5 @@
+require 'acts_as_tree'
+
 class Spree::Menu < ActiveRecord::Base
   include ActsAsTree
 
