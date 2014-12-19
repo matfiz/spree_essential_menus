@@ -1,5 +1,8 @@
+require 'acts_as_tree'
+
 class Spree::Menu < ActiveRecord::Base
-  
+  include ActsAsTree
+
   before_validation :get_static_page_path
   
   belongs_to :menu_bar

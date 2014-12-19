@@ -11,9 +11,14 @@ Add the following line to your gemfile:
 
     gem 'spree_essential_menus', :git => 'git://github.com/matfiz/spree_essential_menus.git'
     
-Then run *bundle*.
+Run:
 
-Copy the migrations to your app and run *rake db:migrate*. You are ready to play!
+    bundle
+    rails g spree_essential_menus:install
+
+Accept to run migrations now.
+
+You are ready to play!
 
 Usage
 -----
