@@ -6,9 +6,9 @@
           %a{:href => "#{parent.url}"}
             = image_tag(parent.menu_image.url(:logo_color), :class => "color")
             = image_tag(parent.menu_image.url(:logo_grey), :class => "grey")
-          - if parent.children.count > 0
+          - if parent.children.visible.count > 0
             %ul
-              - parent.children.each do |child|
+              - parent.children.visible.each do |child|
                 %li.second-level{:"data-image-color" => child.menu_image.url(:original),:"data-image-grey" => child.menu_image.url(:greyscale)}
                   %a{:href => "#{child.url}"}
                     = image_tag(child.menu_image.url(:original), :class => "color")
